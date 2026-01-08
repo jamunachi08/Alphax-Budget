@@ -69,9 +69,9 @@ app_license = "MIT"
 # Uninstallation
 # ------------
 
-# before_uninstall = "budget.uninstall.before_uninstall"
+# before_uninstall = "alphax_budget.uninstall.before_uninstall"
 # after_uninstall = "budget.uninstall.after_uninstall"
-before_uninstall = "budget.patches.v15_0.remove_budget_field.execute"
+before_uninstall = "alphax_budget.patches.v15_0.remove_budget_field.execute"
 
 # Integration Setup
 # ------------------
