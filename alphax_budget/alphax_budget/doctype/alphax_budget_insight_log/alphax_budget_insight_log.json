@@ -1,0 +1,112 @@
+{
+  "actions": [],
+  "allow_rename": 1,
+  "autoname": "hash",
+  "creation": "2026-01-08 06:16:24.830974",
+  "default_view": "List",
+  "doctype": "DocType",
+  "editable_grid": 1,
+  "engine": "InnoDB",
+  "field_order": [
+    "naming_series",
+    "budget",
+    "cost_center",
+    "item_code",
+    "account",
+    "column_break_6",
+    "month",
+    "old_amount",
+    "new_amount",
+    "change_amount",
+    "section_break_11",
+    "changed_by",
+    "change_date",
+    "change_time",
+    "column_break_15",
+    "reference_document",
+    "comments",
+    "section_break_18",
+    "changes",
+    "amended_from"
+  ],
+  "fields": [
+    {
+      "fieldname": "asked_by",
+      "fieldtype": "Link",
+      "label": "Asked By",
+      "options": "User",
+      "read_only": 1
+    },
+    {
+      "fieldname": "asked_on",
+      "fieldtype": "Datetime",
+      "label": "Asked On",
+      "read_only": 1
+    },
+    {
+      "fieldname": "question",
+      "fieldtype": "Small Text",
+      "label": "Question",
+      "reqd": 1
+    },
+    {
+      "fieldname": "context",
+      "fieldtype": "Code",
+      "label": "Context (JSON)",
+      "options": "JSON"
+    },
+    {
+      "fieldname": "answer",
+      "fieldtype": "Long Text",
+      "label": "Answer"
+    },
+    {
+      "fieldname": "provider",
+      "fieldtype": "Data",
+      "label": "Provider",
+      "read_only": 1
+    },
+    {
+      "fieldname": "model",
+      "fieldtype": "Data",
+      "label": "Model",
+      "read_only": 1
+    },
+    {
+      "fieldname": "tokens",
+      "fieldtype": "Int",
+      "label": "Tokens",
+      "read_only": 1
+    }
+  ],
+  "index_web_pages_for_search": 1,
+  "is_submittable": 1,
+  "links": [],
+  "modified": "2026-01-08 06:16:24.830974",
+  "modified_by": "Administrator",
+  "module": "AlphaX Budget",
+  "name": "AlphaX Budget Insight Log",
+  "naming_rule": "By \"Naming Series\" field",
+  "owner": "Administrator",
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "report": 1,
+      "export": 1,
+      "share": 1,
+      "print": 1,
+      "email": 1
+    }
+  ],
+  "quick_entry": 1,
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "states": [],
+  "title_field": "budget",
+  "track_changes": 1,
+  "description": "Audit log for AlphaX Budget Copilot questions and answers"
+}

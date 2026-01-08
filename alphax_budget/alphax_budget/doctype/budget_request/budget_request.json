@@ -1,0 +1,169 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:BR-{department}-{fiscal_year}-{#####}",
+ "creation": "2025-09-11 03:34:13.650541",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "department",
+  "cost_center",
+  "budget_control",
+  "budget_controller",
+  "column_break_z89bl",
+  "fiscal_year",
+  "posting_date",
+  "status",
+  "price_list",
+  "section_break_bjqsx",
+  "budget_items_details",
+  "insert_item_quantity",
+  "section_break_owkgw",
+  "item_summary",
+  "column_break_8huhb",
+  "total_quantity",
+  "total",
+  "amended_from",
+  "budget_created"
+ ],
+ "fields": [
+  {
+   "fieldname": "department",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Department",
+   "options": "Department",
+   "reqd": 1
+  },
+  {
+   "fieldname": "cost_center",
+   "fieldtype": "Link",
+   "label": "Cost Center",
+   "options": "Cost Center"
+  },
+  {
+   "fieldname": "budget_control",
+   "fieldtype": "Link",
+   "label": "Budget Control",
+   "options": "Budget Control"
+  },
+  {
+   "fetch_from": "budget_control.budget_controller",
+   "fieldname": "budget_controller",
+   "fieldtype": "Select",
+   "label": "Budget Controller",
+   "options": "\nDepartmental\nFinancial\nEmployee"
+  },
+  {
+   "fieldname": "column_break_z89bl",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "fiscal_year",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Fiscal Year",
+   "options": "Fiscal Year",
+   "reqd": 1
+  },
+  {
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "label": "Posting date"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "\nRequested\nApproved From Administration Manager\nApproved From Purchasing Department\nReviewed by the Finance Department\nApproved From Finance Department\nApproved From CEO"
+  },
+  {
+   "fieldname": "price_list",
+   "fieldtype": "Link",
+   "label": "Price List",
+   "options": "Price List"
+  },
+  {
+   "fieldname": "section_break_bjqsx",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "budget_items_details",
+   "fieldtype": "Table",
+   "label": "Budget Items Details",
+   "options": "Budget Items Details"
+  },
+  {
+   "fieldname": "insert_item_quantity",
+   "fieldtype": "Button",
+   "label": "insert item quantity"
+  },
+  {
+   "fieldname": "section_break_owkgw",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "item_summary",
+   "fieldtype": "Table",
+   "label": "Item Summary",
+   "options": "Items Summary"
+  },
+  {
+   "fieldname": "total",
+   "fieldtype": "Currency",
+   "label": "Total"
+  },
+  {
+   "fieldname": "total_quantity",
+   "fieldtype": "Data",
+   "label": "Total Quantity"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "options": "Budget Request",
+   "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "0",
+   "fieldname": "budget_created",
+   "fieldtype": "Check",
+   "label": "Budget Created"
+  },
+  {
+   "fieldname": "column_break_8huhb",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-09-11 03:43:19.963648",
+ "modified_by": "Administrator",
+ "module": "AlphaX Budget",
+ "name": "Budget Request",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

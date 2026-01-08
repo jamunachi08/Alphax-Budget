@@ -1,0 +1,26 @@
+[
+  {
+    "doctype": "Page",
+    "name": "alphax-budget-copilot",
+    "creation": "2026-01-08 06:18:28.266110",
+    "modified": "2026-01-08 06:18:28.266139",
+    "modified_by": "Administrator",
+    "owner": "Administrator",
+    "docstatus": 0,
+    "idx": 0,
+    "page_name": "alphax-budget-copilot",
+    "title": "AlphaX Budget Copilot",
+    "module": "AlphaX Budget",
+    "standard": "Yes",
+    "system_page": 0,
+    "roles": [
+      {
+        "doctype": "Page Role",
+        "role": "System Manager",
+        "parent": "alphax-budget-copilot",
+        "parenttype": "Page",
+        "parentfield": "roles"
+      }
+    ]
+  }
+]

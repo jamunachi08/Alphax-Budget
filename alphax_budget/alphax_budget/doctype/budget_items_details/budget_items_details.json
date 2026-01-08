@@ -1,0 +1,184 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-01-21 21:05:26.571563",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "item_code",
+  "description",
+  "section_break_94f3a",
+  "january",
+  "february",
+  "march",
+  "april",
+  "column_break_yupg9",
+  "may",
+  "june",
+  "july",
+  "august",
+  "column_break_ctgnp",
+  "september",
+  "october",
+  "november",
+  "december",
+  "section_break_mjqf6",
+  "expected_price",
+  "total",
+  "total_quantity",
+  "status",
+  "expense_account",
+  "comment"
+ ],
+ "fields": [
+  {
+   "default": "0",
+   "fieldname": "january",
+   "fieldtype": "Float",
+   "label": "January"
+  },
+  {
+   "default": "0",
+   "fieldname": "february",
+   "fieldtype": "Float",
+   "label": "February"
+  },
+  {
+   "default": "0",
+   "fieldname": "march",
+   "fieldtype": "Float",
+   "label": "March"
+  },
+  {
+   "default": "0",
+   "fieldname": "april",
+   "fieldtype": "Float",
+   "label": "April"
+  },
+  {
+   "default": "0",
+   "fieldname": "may",
+   "fieldtype": "Float",
+   "label": "May"
+  },
+  {
+   "default": "0",
+   "fieldname": "june",
+   "fieldtype": "Float",
+   "label": "June"
+  },
+  {
+   "default": "0",
+   "fieldname": "july",
+   "fieldtype": "Float",
+   "label": "July"
+  },
+  {
+   "default": "0",
+   "fieldname": "august",
+   "fieldtype": "Float",
+   "label": "August"
+  },
+  {
+   "default": "0",
+   "fieldname": "september",
+   "fieldtype": "Float",
+   "label": "September"
+  },
+  {
+   "default": "0",
+   "fieldname": "october",
+   "fieldtype": "Float",
+   "label": "October"
+  },
+  {
+   "default": "0",
+   "fieldname": "november",
+   "fieldtype": "Float",
+   "label": "November"
+  },
+  {
+   "default": "0",
+   "fieldname": "december",
+   "fieldtype": "Float",
+   "label": "December"
+  },
+  {
+   "default": "0",
+   "fieldname": "expected_price",
+   "fieldtype": "Float",
+   "label": "Expected Price"
+  },
+  {
+   "fieldname": "total",
+   "fieldtype": "Float",
+   "label": "Total"
+  },
+  {
+   "default": "Accepted",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "\nAccepted\nRejected"
+  },
+  {
+   "fieldname": "expense_account",
+   "fieldtype": "Link",
+   "label": "Expense Account",
+   "options": "Account"
+  },
+  {
+   "fieldname": "total_quantity",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Total Quantity"
+  },
+  {
+   "fieldname": "section_break_94f3a",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_yupg9",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_ctgnp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_mjqf6",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fetch_from": "item_name.description",
+   "fieldname": "description",
+   "fieldtype": "Data",
+   "label": "Description"
+  },
+  {
+   "fieldname": "item_code",
+   "fieldtype": "Link",
+   "label": "Item Code",
+   "options": "Item"
+  },
+  {
+   "fieldname": "comment",
+   "fieldtype": "Text",
+   "label": "Comment",
+   "mandatory_depends_on": "eval:doc.status=='Rejected';"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-08-23 04:56:17.317353",
+ "modified_by": "Administrator",
+ "module": "AlphaX Budget",
+ "name": "Budget Items Details",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

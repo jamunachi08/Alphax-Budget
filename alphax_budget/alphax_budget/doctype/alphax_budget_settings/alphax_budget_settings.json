@@ -1,0 +1,116 @@
+{
+  "allow_rename": 1,
+  "creation": "2026-01-08 06:16:04.758062",
+  "default_view": "List",
+  "doctype": "DocType",
+  "editable_grid": 1,
+  "engine": "InnoDB",
+  "field_order": [
+    "baio1",
+    "baio2",
+    "baio3",
+    "baio4",
+    "baio5",
+    "due_returns",
+    "taxes_owed"
+  ],
+  "fields": [
+    {
+      "fieldname": "enable_ai",
+      "fieldtype": "Check",
+      "label": "Enable AI Copilot",
+      "default": 0,
+      "bold": 1
+    },
+    {
+      "fieldname": "ai_provider",
+      "fieldtype": "Select",
+      "label": "AI Provider",
+      "options": "None\nOpenAI Compatible\nAzure OpenAI (Compatible)\nOllama (OpenAI Compatible)",
+      "default": "None",
+      "depends_on": "eval:doc.enable_ai==1"
+    },
+    {
+      "fieldname": "ai_endpoint",
+      "fieldtype": "Data",
+      "label": "Endpoint URL",
+      "description": "OpenAI-compatible chat/completions endpoint",
+      "depends_on": "eval:doc.enable_ai==1"
+    },
+    {
+      "fieldname": "ai_api_key",
+      "fieldtype": "Password",
+      "label": "API Key",
+      "depends_on": "eval:doc.enable_ai==1"
+    },
+    {
+      "fieldname": "ai_model",
+      "fieldtype": "Data",
+      "label": "Model",
+      "default": "gpt-4o-mini",
+      "depends_on": "eval:doc.enable_ai==1"
+    },
+    {
+      "fieldname": "temperature",
+      "fieldtype": "Float",
+      "label": "Temperature",
+      "default": 0.2,
+      "depends_on": "eval:doc.enable_ai==1"
+    },
+    {
+      "fieldname": "max_tokens",
+      "fieldtype": "Int",
+      "label": "Max Tokens",
+      "default": 800,
+      "depends_on": "eval:doc.enable_ai==1"
+    },
+    {
+      "fieldname": "log_insights",
+      "fieldtype": "Check",
+      "label": "Log AI Q&A",
+      "default": 1,
+      "depends_on": "eval:doc.enable_ai==1"
+    },
+    {
+      "fieldname": "section_break1",
+      "fieldtype": "Section Break",
+      "label": "Security & Limits"
+    },
+    {
+      "fieldname": "allowed_roles",
+      "fieldtype": "Table MultiSelect",
+      "label": "Allowed Roles",
+      "options": "Has Role",
+      "description": "Only these roles can use the Copilot. Leave empty to allow System Manager only.",
+      "depends_on": "eval:doc.enable_ai==1"
+    }
+  ],
+  "index_web_pages_for_search": 1,
+  "issingle": 1,
+  "modified": "2026-01-08 06:16:04.758062",
+  "modified_by": "Administrator",
+  "module": "AlphaX Budget",
+  "name": "AlphaX Budget Settings",
+  "owner": "Administrator",
+  "custom": 0,
+  "autoname": "hash",
+  "description": "Configuration for AlphaX Budget AI + analytics",
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "submit": 0,
+      "cancel": 0,
+      "amend": 0,
+      "report": 1,
+      "export": 1,
+      "import": 0,
+      "share": 1,
+      "print": 1,
+      "email": 1
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include budget *.css
+recursive-include budget *.csv
+recursive-include budget *.html
+recursive-include budget *.ico
+recursive-include budget *.js
+recursive-include budget *.json
+recursive-include budget *.md
+recursive-include budget *.png
+recursive-include budget *.py
+recursive-include budget *.svg
+recursive-include budget *.txt
+recursive-exclude budget *.pyc

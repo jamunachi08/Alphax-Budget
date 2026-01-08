@@ -1,0 +1,10 @@
+Doctype Departmen 
+    event
+
+1- # create_Head_role_for_department
+2- # filter for Manager field to Get User have Role <Department> Head in Department 
+3- validation for Budget request have one Department
+4- payroll cost center is Linked with Doctype cost center
+5- create Budget request with cost center payroll_cost_center
+
+
