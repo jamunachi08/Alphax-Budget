@@ -1,4 +1,3 @@
-
 frappe.pages['alphax-budget-copilot'].on_page_load = function(wrapper) {
   const page = frappe.ui.make_app_page({
     parent: wrapper,
@@ -6,47 +5,32 @@ frappe.pages['alphax-budget-copilot'].on_page_load = function(wrapper) {
     single_column: true
   });
 
-  const $container = $(`
-    <div class="p-3">
+  const body = $(`
+    <div class="p-4">
+      <div class="mb-2 text-muted">${__('Ask budget questions and get AI insights (configure in AlphaX Budget Settings).')}</div>
       <div class="form-group">
-        <label>${__('Ask a budget question')}</label>
-        <textarea class="form-control" rows="3" placeholder="${__('e.g. Why is Branch Riyadh overspending this month?')}"></textarea>
+        <textarea class="form-control" style="min-height: 120px" placeholder="${__('Type your question...')}"></textarea>
       </div>
-      <div class="mt-2">
-        <button class="btn btn-primary">${__('Ask')}</button>
-        <button class="btn btn-default ml-2">${__('Clear')}</button>
-      </div>
+      <button class="btn btn-primary">${__('Ask')}</button>
       <hr/>
-      <pre class="small" style="white-space: pre-wrap;"></pre>
-      <div class="text-muted small mt-2">
-        ${__('Tip: Copilot answers are based on budget distributions and recent accounting / purchasing data.')}
-      </div>
+      <pre class="border rounded p-3 bg-light" style="white-space: pre-wrap"></pre>
     </div>
   `).appendTo(page.body);
 
-  const $q = $container.find('textarea');
-  const $out = $container.find('pre');
+  const ta = body.find('textarea');
+  const out = body.find('pre');
 
-  $container.find('.btn-primary').on('click', async () => {
-    const question = ($q.val() || '').trim();
-    if (!question) {
-      frappe.msgprint(__('Please type a question.'));
-      return;
-    }
-    $out.text(__('Thinking...'));
-    try {
-      const r = await frappe.call({
-        method: 'alphax_budget.ai.copilot.ask',
-        args: { question }
-      });
-      $out.text((r && r.message) ? r.message : __('No response.'));
-    } catch (e) {
-      $out.text(e.message || __('Error'));
-    }
-  });
+  body.find('button').on('click', () => {
+    const q = (ta.val() || '').trim();
+    if (!q) return frappe.msgprint(__('Please type a question.'));
+    out.text(__('Thinking...'));
 
-  $container.find('.btn-default').on('click', () => {
-    $q.val('');
-    $out.text('');
+    frappe.call({
+      method: 'alphax_budget.ai.copilot.ask',
+      args: { question: q },
+      callback: (r) => {
+        out.text((r && r.message) ? r.message : __('No response'));
+      }
+    });
   });
-}
+};

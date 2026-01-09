@@ -1,0 +1,14 @@
+{
+  "doctype": "Page",
+  "name": "alphax-budget-copilot",
+  "page_name": "alphax-budget-copilot",
+  "title": "AlphaX Budget Copilot",
+  "module": "AlphaX Budget",
+  "standard": "Yes",
+  "system_page": 0,
+  "roles": [
+    {
+      "role": "System Manager"
+    }
+  ]
+}
