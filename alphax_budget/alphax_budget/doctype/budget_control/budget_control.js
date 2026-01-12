@@ -466,7 +466,7 @@ frappe.ui.form.on('Budget Control', {
             // ==============================================================================
             // Call the server method
             frappe.call({
-                method: "budget.budge.doctype.budget_control.budget_control.get_monthly_distribution_department",
+                method: "alphax_budget.alphax_budget.doctype.budget_control.budget_control.get_monthly_distribution_department",
                 args: {
                     cost_center: frm.doc.cost_center,
                     fiscal_year: frm.doc.fiscal_year,
@@ -875,7 +875,7 @@ function update_budget_amount(frm, row, action) {
 
 function update_budget_amount_direct(frm, row, newAmount, action) {
     frappe.call({
-        method: "budget.budge.doctype.budget_control.budget_control.update_budget_amount",
+        method: "alphax_budget.alphax_budget.doctype.budget_control.budget_control.update_budget_amount",
         args: {
             cost_center: frm.doc.cost_center,
             item_code: row.item_code,
@@ -1045,7 +1045,7 @@ function load_dashboard_data(frm) {
 
     // Call the server method
     frappe.call({
-        method: "budget.budge.doctype.budget_control.budget_control.get_monthly_distribution_department",
+        method: "alphax_budget.alphax_budget.doctype.budget_control.budget_control.get_monthly_distribution_department",
         args: {
             cost_center: frm.doc.cost_center,
             fiscal_year: frm.doc.fiscal_year,
@@ -1151,7 +1151,7 @@ function generate_budget_report(frm, filters) {
     }
 
     frappe.call({
-        method: "budget.budge.doctype.budget_control.budget_control.get_monthly_distribution_report",
+        method: "alphax_budget.alphax_budget.doctype.budget_control.budget_control.get_monthly_distribution_report",
         args: args,
         callback: function(r) {
             if (r.message) {
@@ -1434,7 +1434,7 @@ function download_report_pdf(html_content, filters) {
 
 function delete_budget_monthly_distribution (frm){
     frappe.call({
-        method : 'budget.budge.doctype.budget_request.budget_request.delete_budget_related_records',
+        method : 'alphax_budget.alphax_budget.doctype.budget_request.budget_request.delete_budget_related_records',
         args:{
             'budget_control_name':frm.doc.name,
             "fiscal_year":frm.doc.fiscal_year,

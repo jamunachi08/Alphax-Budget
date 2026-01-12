@@ -82,7 +82,7 @@
 //         // Check each accepted item's account for duplicate budgets
 //         for (let item of acceptedItems) {
 //             const existingBudget = await frappe.call({
-//                 method: "budget.budge.api.budget.check_budget_account_exists",
+//                 method: "alphax_budget.alphax_budget.api.budget.check_budget_account_exists",
 //                 args: {
 //                     cost_center: costCenter,
 //                     fiscal_year: fiscalYear,
@@ -273,7 +273,7 @@
 
 // async function createBudgetDocument(frm, accountsTable) {
 //     const budget = frappe.model.get_new_doc("Budget");
-//     budget.budget_against = "Cost Center";
+//     alphax_budget.alphax_budgett_against = "Cost Center";
 //     budget.cost_center = frm.doc.cost_center;
 //     budget.fiscal_year = frm.doc.fiscal_year;
 //     budget.custom_budget_request_reference = frm.doc.name;
@@ -331,7 +331,7 @@
 //             frappe.show_progress(__("Creating Budget"), 0, 100, __("Processing..."));
             
 //             const result = await frappe.call({
-//                 method: "budget.budge.api.budget_request.check_and_create_budget",
+//                 method: "alphax_budget.alphax_budget.api.budget_request.check_and_create_budget",
 //                 args: {
 //                     budget_request_name: frm.doc.name
 //                 }
